@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: usage_message
+  application:
+    name: rabbit-publisher
+  banner:
+    location: classpath:/banner/banner.txt
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    #url: jdbc:h2:mem:testdb
+    url: jdbc:h2:file:D:/desarrollo/h2/data/demo
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+    
+server:
+  port: 8080
+  servlet:
+    context-path: /rabbit-publisher
+  
+logging:
+  level:
+    org.springframework: ERROR
+    com.example.demo: DEBUG
